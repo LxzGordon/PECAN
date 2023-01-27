@@ -1,0 +1,156 @@
+{
+  "BATCH_SIZE": 400,
+  "CLIPPING": 0.05,
+  "ENTROPY": 0.1,
+  "EX_NAME": "undefined_name",
+  "GAMMA": 0.99,
+  "GPU_ID": 1,
+  "GRAD_UPDATES_PER_AGENT": 19968.0,
+  "HM_PARAMS": [
+    true,
+    0.3
+  ],
+  "LAM": 0.98,
+  "LOCAL_TESTING": false,
+  "LR": 0.001,
+  "LR_ANNEALING": 1,
+  "MAX_GRAD_NORM": 0.1,
+  "MINIBATCHES": 6,
+  "NETWORK_TYPE": "conv_and_mlp",
+  "NUM_CONV_LAYERS": 3,
+  "NUM_FILTERS": 25,
+  "NUM_HIDDEN_LAYERS": 3,
+  "OTHER_AGENT_TYPE": "bc_train",
+  "PPO_RUN_TOT_TIMESTEPS": 5000000.0,
+  "REW_SHAPING_HORIZON": 0,
+  "RUN_TYPE": "ppo",
+  "SAVE_BEST_THRESH": 50,
+  "SAVE_DIR": "data/ppo_runs/2022_07_21-15_41_09_undefined_name/",
+  "SEEDS": [
+    0
+  ],
+  "SELF_PLAY_HORIZON": null,
+  "SIZE_HIDDEN_LAYERS": 64,
+  "STEPS_PER_UPDATE": 8,
+  "TIMESTAMP_DIR": true,
+  "TOTAL_BATCH_SIZE": 12000,
+  "TRAJECTORY_SELF_PLAY": true,
+  "VF_COEF": 0.1,
+  "VIZ_FREQUENCY": 50,
+  "horizon": 400,
+  "layout_name": "simple",
+  "mdp_generation_params": {
+    "mdp_shape_fn": [
+      [
+        5,
+        11
+      ],
+      [
+        5,
+        7
+      ]
+    ],
+    "padded_mdp_shape": [
+      11,
+      7
+    ],
+    "prop_empty_fn": [
+      0.6,
+      1
+    ],
+    "prop_feats_fn": [
+      0,
+      0.6
+    ]
+  },
+  "params": {
+    "BATCH_SIZE": 400,
+    "CLIPPING": 0.05,
+    "ENTROPY": 0.1,
+    "EX_NAME": "undefined_name",
+    "GAMMA": 0.99,
+    "GPU_ID": 1,
+    "HM_PARAMS": [
+      true,
+      0.3
+    ],
+    "LAM": 0.98,
+    "LOCAL_TESTING": false,
+    "LR": 0.001,
+    "LR_ANNEALING": 1,
+    "MAX_GRAD_NORM": 0.1,
+    "MINIBATCHES": 6,
+    "NETWORK_TYPE": "conv_and_mlp",
+    "NUM_CONV_LAYERS": 3,
+    "NUM_FILTERS": 25,
+    "NUM_HIDDEN_LAYERS": 3,
+    "OTHER_AGENT_TYPE": "bc_train",
+    "PPO_RUN_TOT_TIMESTEPS": 5000000.0,
+    "REW_SHAPING_HORIZON": 0,
+    "RUN_TYPE": "ppo",
+    "SAVE_BEST_THRESH": 50,
+    "SAVE_DIR": "data/ppo_runs/2022_07_21-15_41_09_undefined_name/",
+    "SEEDS": [
+      0
+    ],
+    "SELF_PLAY_HORIZON": null,
+    "SIZE_HIDDEN_LAYERS": 64,
+    "STEPS_PER_UPDATE": 8,
+    "TOTAL_BATCH_SIZE": 12000,
+    "TRAJECTORY_SELF_PLAY": true,
+    "VF_COEF": 0.1,
+    "VIZ_FREQUENCY": 50,
+    "env_params": {
+      "horizon": 400
+    },
+    "grad_updates_per_agent": 19968.0,
+    "mdp_generation_params": {
+      "mdp_shape_fn": [
+        [
+          5,
+          11
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "padded_mdp_shape": [
+        11,
+        7
+      ],
+      "prop_empty_fn": [
+        0.6,
+        1
+      ],
+      "prop_feats_fn": [
+        0,
+        0.6
+      ]
+    },
+    "mdp_params": {
+      "layout_name": "simple",
+      "rew_shaping_params": {
+        "DISH_DISP_DISTANCE_REW": 0,
+        "DISH_PICKUP_REWARD": 3,
+        "PLACEMENT_IN_POT_REW": 3,
+        "POT_DISTANCE_REW": 0,
+        "SOUP_DISTANCE_REW": 0,
+        "SOUP_PICKUP_REWARD": 5
+      },
+      "start_order_list": null
+    },
+    "sim_threads": 30
+  },
+  "rew_shaping_params": {
+    "DISH_DISP_DISTANCE_REW": 0,
+    "DISH_PICKUP_REWARD": 3,
+    "PLACEMENT_IN_POT_REW": 3,
+    "POT_DISTANCE_REW": 0,
+    "SOUP_DISTANCE_REW": 0,
+    "SOUP_PICKUP_REWARD": 5
+  },
+  "seed": 781206881,
+  "sim_threads": 30,
+  "start_order_list": null
+}

@@ -1,0 +1,107 @@
+{
+  "artifacts": [],
+  "command": "ppo_run",
+  "experiment": {
+    "base_dir": "/home/louxingzhou/zsc/utility/human_aware_rl/human_aware_rl/ppo",
+    "dependencies": [
+      "gym==0.17.2",
+      "matplotlib==3.0.3",
+      "memory-profiler==0.60.0",
+      "numpy==1.18.5",
+      "sacred==0.7.4",
+      "seaborn==0.11.2",
+      "tensorflow==1.13.1"
+    ],
+    "mainfile": "ppo.py",
+    "name": "PPO",
+    "repositories": [
+      {
+        "commit": "2507b93885ceba21475f157fc1824bd3945e6a8e",
+        "dirty": true,
+        "url": "https://github.com/HumanCompatibleAI/human_aware_rl.git"
+      }
+    ],
+    "sources": [
+      [
+        "ppo.py",
+        "_sources/ppo_41efeb08da1941b7ce514302191aec14.py"
+      ]
+    ]
+  },
+  "fail_trace": [
+    "Traceback (most recent call last):\n",
+    "  File \"/home/louxingzhou/anaconda3/envs/harl/lib/python3.7/site-packages/sacred/config/captured_function.py\", line 46, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"ppo.py\", line 374, in ppo_run\n    configure_other_agent(params, gym_env, mlp, mdp)\n",
+    "  File \"ppo.py\", line 242, in configure_other_agent\n    best_bc_model_paths = load_pickle(BEST_BC_MODELS_PATH)\n",
+    "  File \"/home/louxingzhou/zsc/utility/human_aware_rl/overcooked_ai/overcooked_ai_py/utils.py\", line 12, in load_pickle\n    with open(fix_filetype(filename, \".pickle\"), \"rb\") as f:\n",
+    "FileNotFoundError: [Errno 2] No such file or directory: 'data/bc_runs/best_bc_model_paths.pickle'\n"
+  ],
+  "heartbeat": "2022-07-21T07:41:16.259862",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz",
+    "gpus": {
+      "driver_version": "470.129.06",
+      "gpus": [
+        {
+          "model": "NVIDIA TITAN RTX",
+          "persistence_mode": false,
+          "total_memory": 24220
+        },
+        {
+          "model": "NVIDIA TITAN RTX",
+          "persistence_mode": false,
+          "total_memory": 24220
+        },
+        {
+          "model": "NVIDIA TITAN RTX",
+          "persistence_mode": false,
+          "total_memory": 24220
+        },
+        {
+          "model": "NVIDIA TITAN RTX",
+          "persistence_mode": false,
+          "total_memory": 24220
+        }
+      ]
+    },
+    "hostname": "test-XXXXX-XXX",
+    "os": [
+      "Linux",
+      "Linux-5.4.0-120-generic-x86_64-with-debian-buster-sid"
+    ],
+    "python_version": "3.7.13"
+  },
+  "meta": {
+    "command": "ppo_run",
+    "options": {
+      "--beat_interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print_config": false,
+      "--priority": null,
+      "--queue": false,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [],
+      "help": false,
+      "with": false
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2022-07-21T07:41:10.075411",
+  "status": "FAILED",
+  "stop_time": "2022-07-21T07:41:16.264311"
+}
