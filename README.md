@@ -1,5 +1,5 @@
 # PECAN
-This is the code for AAMAS 2023 paper [PECAN: Leveraging Policy Ensemble for Context-Aware Zero-Shot Human-AI Coordination](https://arxiv.org/abs/2301.06387).
+This codebase is implementation of the AAMAS 2023 paper [PECAN: Leveraging Policy Ensemble for Context-Aware Zero-Shot Human-AI Coordination](https://arxiv.org/abs/2301.06387).
 <p align="center">
   <img src="pecan_uni.gif" width="40%">
   <img src="pecan_simple.gif" width="40%">
@@ -14,19 +14,22 @@ Install relavant modules and the human-aware-rl package by
     ./install.sh
 ```
 
-## 2. Save models
-Save models of [Human-Aware-RL](https://github.com/HumanCompatibleAI/human_aware_rl/tree/neurips2019) agents in this [directory](https://github.com/LxzGordon/pecan_human_AI_coordination/tree/master/models) (like the given MEP model for layout simple)
-## 3. Start a process
-For example, this will start a process on port 8008 with an MEP agent on the layout simple.
- ```shell
-    python overcookedgym/overcooked-flask/app.py --layout=simple --algo=0 --port=8008 --seed=1
-```
+## 2. Stage 1&2 (Train the population and context encoder. Optional)
+Follow the instructions of the first step of [MEP](https://github.com/ruizhaogit/maximum_entropy_population_based_training.git) to train an maximum-entropy population.
 
-The next command will start a dummy demo agent.
- ```shell
-    python overcookedgym/overcooked-flask/app.py --layout=simple --port=8008 --dummy=True
-```
+Train the context encoder in [here](https://github.com/LxzGordon/PECAN/blob/master/human_aware_rl/human_aware_rl/context/model.py) via standard supervised learning with data collected in the stage 2 training of MEP.
 
+For easy usage, some pre-trained models are provided in this repo so you can skip this step.
+## 3. Train the ego agent
+Train the ego agent with the following comman. Note that you have to specificy paths of all 15 agents in the population in the '''LOAD_FOLDER_LST''' variable, seperated by ''':'''.
+'''
+export PBT_DATA_DIR=pbt_data_dir_2/ && python pbt/pbt_model_pool.py with fixed_mdp layout_name="simple" EX_NAME="pbt_simple" TOTAL_STEPS_PER_AGENT=1.1e7 TRAING_ITERATIONS=100 ALPHA_DECAY_HORIZON=70 ALPHA_FINAL=0.3 REW_SHAPING_HORIZON=5e6 LR=8e-4 POPULATION_SIZE=15 SEEDS="[1111,5015,7015,8015]" GPU_ID=0 NUM_SELECTION_GAMES=6 VF_COEF=0.5 MINIBATCHES=10 TIMESTAMP_DIR=False ENTROPY_POOL=0.0 PRIORITIZED_SAMPLING=True ALPHA=3.0 METRIC=1.0 LOAD_FOLDER_LST="path1/:path2/:path3/..." 
+'''
+
+Or you can use the pre-trained models
+'''
+export PBT_DATA_DIR=pbt_data_dir_2/ && python pbt/pbt_model_pool.py with fixed_mdp layout_name="simple" EX_NAME="pbt_simple" TOTAL_STEPS_PER_AGENT=1.1e7 TRAING_ITERATIONS=100 ALPHA_DECAY_HORIZON=70 ALPHA_FINAL=0.3 REW_SHAPING_HORIZON=5e6 LR=8e-4 POPULATION_SIZE=15 SEEDS="[1111,5015,7015,8015]" GPU_ID=0 NUM_SELECTION_GAMES=6 VF_COEF=0.5 MINIBATCHES=10 TIMESTAMP_DIR=False ENTROPY_POOL=0.0 PRIORITIZED_SAMPLING=True ALPHA=3.0 METRIC=1.0 LOAD_FOLDER_LST="pbt_data_dir/pbt_simple/seed_9015/agent0/pbt_iter1/:pbt_data_dir/pbt_simple/seed_9015/agent1/pbt_iter1/:pbt_data_dir/pbt_simple/seed_9015/agent2/pbt_iter1/:pbt_data_dir/pbt_simple/seed_9015/agent3/pbt_iter1/:pbt_data_dir/pbt_simple/seed_9015/agent4/pbt_iter1/:pbt_data_dir/pbt_simple/seed_9015/agent0/pbt_iter152/:pbt_data_dir/pbt_simple/seed_9015/agent1/pbt_iter152/:pbt_data_dir/pbt_simple/seed_9015/agent2/pbt_iter152/:pbt_data_dir/pbt_simple/seed_9015/agent3/pbt_iter152/:pbt_data_dir/pbt_simple/seed_9015/agent4/pbt_iter152/:pbt_data_dir/pbt_simple/seed_9015/agent0/pbt_iter305/:pbt_data_dir/pbt_simple/seed_9015/agent1/pbt_iter305/:pbt_data_dir/pbt_simple/seed_9015/agent2/pbt_iter305/:pbt_data_dir/pbt_simple/seed_9015/agent3/pbt_iter305/:pbt_data_dir/pbt_simple/seed_9015/agent4/pbt_iter305/" 
+'''
 # Citation
 Please cite
  ```
@@ -35,27 +38,5 @@ Please cite
   author={Lou, Xingzhou and Guo, Jiaxian and Zhang, Junge and Wang, Jun and Huang, Kaiqi and Du, Yali},
   journal={arXiv preprint arXiv:2301.06387},
   year={2023}
-}
- ```
-
- ```
- @inproceedings{sarkar2022pantheonrl,
-  title={PantheonRL: A MARL Library for Dynamic Training Interactions},
-  author={Sarkar, Bidipta and Talati, Aditi and Shih, Andy and Sadigh, Dorsa},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
-  volume={36},
-  number={11},
-  pages={13221--13223},
-  year={2022}
-}
- ```
-
- ```
-@article{carroll2019utility,
-  title={On the utility of learning about humans for human-ai coordination},
-  author={Carroll, Micah and Shah, Rohin and Ho, Mark K and Griffiths, Tom and Seshia, Sanjit and Abbeel, Pieter and Dragan, Anca},
-  journal={Advances in neural information processing systems},
-  volume={32},
-  year={2019}
 }
  ```
