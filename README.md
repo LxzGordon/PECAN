@@ -7,8 +7,8 @@ This is the code for AAMAS 2023 paper [PECAN: Leveraging Policy Ensemble for Con
 </p>
 # Instruction for usage
 
-## 1. Install libraries
-Install relavant packages and the human-aware-rl by
+## 1. Install
+Install relavant modules and the human-aware-rl package by
  ```shell
     cd human-aware-rl/
     ./install.sh
