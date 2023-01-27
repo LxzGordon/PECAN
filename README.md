@@ -22,7 +22,7 @@ Train the context encoder in [here](https://github.com/LxzGordon/PECAN/blob/mast
 
 For easy usage, some pre-trained models are provided in this repo so you can skip this step.
 ## 3. Train the ego agent
-Train the ego agent with the following comman. Note that you have to specificy paths of all 15 agents in the population in the  ```LOAD_FOLDER_LST ``` variable, seperated by  ```:```.
+Train the ego agent with the following comman. Note that you have to specificy paths of all 15 agents in the population in the  ```LOAD_FOLDER_LST``` variable, seperated by  ```:```.
  ```shell
 export PBT_DATA_DIR=pbt_data_dir_2/ && python pbt/pbt_model_pool.py with fixed_mdp layout_name="simple"\
 EX_NAME="pbt_simple" TOTAL_STEPS_PER_AGENT=1.1e7 TRAINING_ITERATIONS=$training_iteration ALPHA_DECAY_HORIZON=$alpha_horizon ALPHA_FINAL=$alpha_final REW_SHAPING_HORIZON=$reward_shaping\
