@@ -273,7 +273,7 @@ def my_config():
     ##############
     # PPO PARAMS #
     ##############
-    TRAING_ITERATIONS=100
+    TRAINING_ITERATIONS=100
     # Decay from population partners to policy-ensemble partners
     ALPHA_DECAY_HORIZON=70
     ALPHA_FINAL=0.3
@@ -404,7 +404,7 @@ def my_config():
         "env_params": {
             "horizon": horizon
         },
-        'TRAING_ITERATIONS':TRAING_ITERATIONS,
+        'TRAINING_ITERATIONS':TRAINING_ITERATIONS,
         'ALPHA_DECAY_HORIZON':ALPHA_DECAY_HORIZON,
         'ALPHA_FINAL':ALPHA_FINAL,
         "PPO_RUN_TOT_TIMESTEPS": PPO_RUN_TOT_TIMESTEPS,
