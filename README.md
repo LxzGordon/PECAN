@@ -1,5 +1,7 @@
 # PECAN
-This codebase is implementation of the AAMAS 2023 paper [PECAN: Leveraging Policy Ensemble for Context-Aware Zero-Shot Human-AI Coordination](https://arxiv.org/abs/2301.06387). This codebase is based on [human-aware-rl](https://github.com/HumanCompatibleAI/human_aware_rl/tree/neurips2019) and [MEP](https://github.com/ruizhaogit/maximum_entropy_population_based_training.git).
+This codebase is implementation of the AAMAS 2023 paper [PECAN: Leveraging Policy Ensemble for Context-Aware Zero-Shot Human-AI Coordination](https://arxiv.org/abs/2301.06387). 
+
+This codebase is based on [human-aware-rl](https://github.com/HumanCompatibleAI/human_aware_rl/tree/neurips2019) and [MEP](https://github.com/ruizhaogit/maximum_entropy_population_based_training.git).
 <p align="center">
   <img src="pecan_uni.gif" width="40%">
   <img src="pecan_simple.gif" width="40%">
