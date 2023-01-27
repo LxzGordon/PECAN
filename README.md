@@ -8,6 +8,7 @@ This codebase is based on [human-aware-rl](https://github.com/HumanCompatibleAI/
   <br>
 </p>
 
+We provide an easy-to-use human-AI coordination framework for the Overcooked environment. Please check this [repo](https://github.com/LxzGordon/pecan_human_AI_coordination) for further details.
 # Instruction for usage
 
 ## 1. Install
