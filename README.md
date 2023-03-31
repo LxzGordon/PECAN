@@ -2,7 +2,7 @@
 <p align="center">
   <img src="dalle.png" width="30%">
   <br>
-  (A picture of PECAN created by DALL·E)
+  <i>(A picture of PECAN created by DALL·E)</i>
 </p>
 This codebase is implementation of the AAMAS 2023 paper [PECAN: Leveraging Policy Ensemble for Context-Aware Zero-Shot Human-AI Coordination](https://arxiv.org/abs/2301.06387). 
 
