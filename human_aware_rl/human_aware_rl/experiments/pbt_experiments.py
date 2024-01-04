@@ -4,9 +4,8 @@ import tensorflow as tf
 import torch as th
 import matplotlib.pyplot as plt
 from collections import defaultdict
-from human_aware_rl.context.test_level import Net
+from human_aware_rl.context.model import Net
 from overcooked_ai_py.utils import save_pickle, load_pickle, load_dict_from_txt
-from overcooked_ai_py.agents.agent import AgentPair_context
 from overcooked_ai_py.agents.benchmarking import AgentEvaluator
 
 from human_aware_rl.utils import set_global_seed, prepare_nested_default_dict_for_pickle, common_keys_equal
@@ -90,7 +89,7 @@ def eval_pbt_over_seeds(pbt_agents, bc_agent, layout_name, num_rounds, pbt_perfo
     c_identifier.load_state_dict(th.load('context/net_level_'+layout_name+'.pth'))
 
     for i in range(len(pbt_agents)):
-        bc_and_pbt = ae.evaluate_agent_pair_context(bc_agent, pbt_agents[i], num_games=num_rounds,c_identifier=c_identifier,embeddings=embeddings)
+        bc_and_pbt = ae.evaluate_agent_pair_context(bc_agent, pbt_agents[i], num_games=num_rounds,c_identifier=c_identifier)
         avg_bc_and_pbt = np.mean([a['ep_returns'] for a in bc_and_pbt])
         pbt_performance[layout_name]["PBT+BC_1"].append(avg_bc_and_pbt)
         print(avg_bc_and_pbt)
@@ -100,13 +99,6 @@ def eval_pbt_over_seeds(pbt_agents, bc_agent, layout_name, num_rounds, pbt_perfo
 def run_all_pbt_experiments(best_bc_model_paths):
 
     seeds=[1111,5015,7015,8015]
-    '''pbt_model_paths = {
-        "simple": "pbt_simple",
-        "unident_s": "pbt_unident_s",
-        "random1": "pbt_random1",
-        "random3": "pbt_random3",
-        "random0": "pbt_random0"
-    }'''
     pbt_model_paths = {
       "simple": "pbt_simple"
       }
